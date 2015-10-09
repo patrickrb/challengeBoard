@@ -5,6 +5,10 @@ angular.module('challengeBoardApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
+    },
+    {
+      'title': 'SecKC',
+      'link' : 'https://seckc.org'
     }];
 
     $scope.isCollapsed = true;
