@@ -1,12 +1,62 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
-  <p>The delete user and user index api routes are restricted to users with the 'admin' role.</p>
-  <ul class="list-group">
-    <li class="list-group-item" ng-repeat="user in users">
-        <strong>{{user.name}}</strong><br>
-        <span class="text-muted">{{user.email}}</span>
-        <a ng-click="delete(user)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
-    </li>
-  </ul>
+  <form class="form-horizontal">
+	<fieldset>
+
+	<!-- Form Name -->
+	<legend>Create a challenge</legend>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="challengeName">Challenge Name</label>  
+	  <div class="col-md-4">
+	  <input id="challengeName" name="challengeName" type="text" placeholder="" ng-model="name" class="form-control input-md">
+	  <span class="help-block">Enter a name for your challenge</span>  
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="challengeDetails">Details</label>  
+	  <div class="col-md-4">
+	  <input id="challengeDetails" name="challengeDetails" type="text" placeholder="" ng-model="details" class="form-control input-md">
+	  <span class="help-block">Some super l33t hint or description of the challenge</span>  
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="challengeLink">Link</label>  
+	  <div class="col-md-4">
+	  <input id="challengeLink" name="challengeLink" type="text" placeholder="http://somelink.com/thechallenge" ng-model="link" class="form-control input-md">
+	  <span class="help-block">Be sure to add http:// or https://</span>  
+	  </div>
+	</div>
+
+	<!-- Select Basic -->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="challengeDifficulty">Difficulty</label>
+	  <div class="col-md-1">
+	    <select id="challengeDifficulty" name="challengeDifficulty" ng-model="difficulty" class="form-control">
+	      <option value="1">1</option>
+	      <option value="2">2</option>
+	      <option value="3">3</option>
+	      <option value="4">4</option>
+	      <option value="5">5</option>
+	    </select>
+	  </div>
+	</div>
+
+	<!-- Button -->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="challengeSubmit"></label>
+	  <div class="col-md-4">
+	    <button id="challengeSubmit" name="challengeSubmit" class="btn btn-primary" ng-click="submitChallenge()">Save</button>
+	  </div>
+	</div>
+
+	</fieldset>
+</form>
+
 </div>

@@ -1,8 +1,13 @@
 'use strict';
+var path = require('path');
 
 // Production specific configuration
 // =================================
 module.exports = {
+
+  // Root path of server
+  root: path.normalize(__dirname + '/../../../dist'),
+
   // Server IP
   ip:       process.env.OPENSHIFT_NODEJS_IP ||
             process.env.IP ||
@@ -18,6 +23,6 @@ module.exports = {
     uri:    process.env.MONGOLAB_URI ||
             process.env.MONGOHQ_URL ||
             process.env.OPENSHIFT_MONGODB_DB_URL+process.env.OPENSHIFT_APP_NAME ||
-            'mongodb://localhost/challengeboard'
+            'mongodb://localhost/challengeboard-dev'
   }
 };

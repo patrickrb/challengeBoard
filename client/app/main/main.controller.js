@@ -9,11 +9,11 @@ angular.module('challengeBoardApp')
       socket.syncUpdates('challenge', $scope.challenges);
     });
 
-    $scope.deleteChallenge = function(challenge) {
-      $http.delete('/api/challenges/' + challenge._id);
-    };
+    // $scope.deleteChallenge = function(challenge) {
+    //   $http.delete('/api/challenges/' + challenge._id);
+    // };
 
-    $scope.$on('$destroy', function () {
-      socket.unsyncUpdates('challenge');
-    });
+    // $scope.$on('$destroy', function () {
+    //   socket.unsyncUpdates('challenge');
+    // });
   });

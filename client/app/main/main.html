@@ -2,7 +2,7 @@
 
 <header class="hero-unit" id="banner">
   <div class="container">
-    <img src="assets/images/seckkclogo.jpeg" alt="I'm Yeoman">
+    <img src="assets/images/seckkclogo.jpeg" alt="seckc challenges">
   </div>
 </header>
 
@@ -10,17 +10,44 @@
   <div class="row">
     <div class="col-lg-12">
       <h1 class="page-header">Challenges:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="challenge in challenges">
-        <li><a href="#" tooltip="{{challenge.details}}">{{challenge.name}}<button type="button" class="close" ng-click="deleteChallenge(challenge)">&times;</button></a></li>
-      </ul>
+      <div class="row">
+       <table class="table table-striped challengeTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Details</th>
+              <th>Submitted By</th>
+              <th>Link</th>
+              <th>Difficulty</th>
+              <th>is solved</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="challenge in challenges">
+              <td class="challengeRow">{{challenge.name}}</td>
+              <td class="challengeRow">{{challenge.details}}</td>
+              <td class="challengeRow">{{challenge.user}}</td>
+              <td class="challengeRow"><a href="{{challenge.link}}" target="_blank">{{challenge.link}}</a></td>
+              <td class="challengeRow" ng-if="challenge.difficulty == 1"><img src="assets/images/badges/lvl1.png" width="50px"></td>
+              <td class="challengeRow" ng-if="challenge.difficulty == 2"><img src="assets/images/badges/lvl2.png" width="50px"></td>
+              <td class="challengeRow" ng-if="challenge.difficulty == 3"><img src="assets/images/badges/lvl3.png" width="50px"></td>
+              <td class="challengeRow" ng-if="challenge.difficulty == 4"><img src="assets/images/badges/lvl4.png" width="50px"></td>
+              <td class="challengeRow" ng-if="challenge.difficulty == 5"><img src="assets/images/badges/1337.png" width="50px"></td>
+              <td class="challengeRow" ng-if="challenge.isSolved"><i class="fa fa-check-circle-o" style="color:green;"></i></td>
+              <td class="challengeRow" ng-if="!challenge.isSolved"><i class="fa fa-exclamation-triangle" style="color:red;"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
 
 <footer class="footer">
   <div class="container">
-      <p>Angular Fullstack v2.1.1 |
-        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+      <p>SecKC Challenge Board | v1.0
+        <a href="https://twitter.com/jigglebilly83">@jigglebilly83</a> |
+        <a href="https://twitter.com/kevinmbennett">@kevinmbennett</a> |
+         <a href="https://github.com/patrickrb/challengeBoard/issues?state=open">Issues</a></p>
   </div>
 </footer>
