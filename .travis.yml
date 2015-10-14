@@ -6,5 +6,4 @@ before_script:
   - npm install -g bower grunt-cli
   - gem install sass
   - bower install
-  - npm update-webdriver
 services: mongodb
