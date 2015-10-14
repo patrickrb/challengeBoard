@@ -6,6 +6,10 @@ You'll need to install grunt and bower on your host and you'll need a local mong
 
     $ npm install -g grunt-cli bower
 
+Next, install npm packages and bower dependencies
+
+    $ npm install
+    $ bower install
 Then launch your express server in development mode using
 
     $ grunt serve
