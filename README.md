@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/patrickrb/challengeBoard.svg?branch=master)](https://travis-ci.org/patrickrb/challengeBoard)
 # challengeBoard
 Built with [Angular Fullstack][1] 
 
