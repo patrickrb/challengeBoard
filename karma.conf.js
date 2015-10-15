@@ -32,6 +32,7 @@ module.exports = function(config) {
       '**/*.jade': 'ng-jade2js',
       '**/*.html': 'html2js',
       'client/app/**/*.js': 'babel',
+      'client/components/**/*.js': 'babel',
       '**/*.coffee': 'coffee',
     },
 
