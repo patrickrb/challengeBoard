@@ -6,6 +6,14 @@ angular.module('challengeBoardApp')
       .state('main', {
         url: '/',
         templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        resolve: {
+            init: function(challengeService) {
+                return challengeService.init()
+                    .then(function() {
+                        //challenges are loaded and ready here
+                    })
+            }
+        }
       });
   });
